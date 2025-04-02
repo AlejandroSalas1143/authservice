@@ -22,8 +22,8 @@ export class AuthController {
   //   return this.authService.findOne(email);
   // }
   @Post('login')
-  findOne(@Body('email') email: string, @Body('password') password: string) {
-    return this.authService.findOne(email, password);
+  findOne(@Body() loginDto: loginDto) {
+    return this.authService.login(loginDto);
   }
   // @Patch(':id')
   // update(@Param('id') id: string, @Body() updateAuthDto: UpdateAuthDto) {
